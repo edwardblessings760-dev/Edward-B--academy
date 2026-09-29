@@ -1,45 +1,59 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   margin: 0;
   background: #f4f6f9;
-  color: #333;
 }
 
-/* Header style */
-h1 {
+/* HEADER */
+.header {
   background: #1e3a8a;
   color: white;
-  padding: 20px;
-  margin: 0;
+  text-align: center;
+  padding: 30px;
 }
 
-/* Paragraph */
-p {
-  font-size: 18px;
-  margin: 20px;
+/* NAVIGATION */
+.nav {
+  background: #111827;
+  text-align: center;
+  padding: 10px;
 }
 
-/* Buttons / Links */
-a {
-  display: inline-block;
-  padding: 12px 20px;
+.nav a {
+  color: white;
   margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  color: #22c55e;
+}
+
+/* CARDS */
+.card {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card a {
+  display: block;
+  margin: 10px;
+  padding: 10px;
   background: #16a34a;
   color: white;
   text-decoration: none;
   border-radius: 8px;
-  font-weight: bold;
 }
 
-a:hover {
-  background: #15803d;
-}
-
-/* Cards layout */
-.card {
-  background: white;
-  margin: 15px;
+/* FOOTER */
+.footer {
+  text-align: center;
   padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #e5e7eb;
+  margin-top: 30px;
 }
