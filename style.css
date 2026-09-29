@@ -1,15 +1,45 @@
 body {
-  font-family: Arial;
-  text-align: center;
-  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6f9;
+  color: #333;
 }
 
+/* Header style */
 h1 {
-  color: darkblue;
+  background: #1e3a8a;
+  color: white;
+  padding: 20px;
+  margin: 0;
 }
 
+/* Paragraph */
+p {
+  font-size: 18px;
+  margin: 20px;
+}
+
+/* Buttons / Links */
 a {
-  color: green;
-  display: block;
+  display: inline-block;
+  padding: 12px 20px;
   margin: 10px;
+  background: #16a34a;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+a:hover {
+  background: #15803d;
+}
+
+/* Cards layout */
+.card {
+  background: white;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
