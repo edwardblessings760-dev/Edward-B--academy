@@ -11,7 +11,11 @@
   <h1>Edward Academy</h1>
   <p>JCE & MSCE Student Learning Dashboard</p>
 </div>
-
+<div class="card">
+  <h2>🔍 Search Subjects</h2>
+  <input type="text" id="searchInput" placeholder="Search subject or paper..." onkeyup="searchSite()">
+</div>
+<div id="searchResults"></div>  
 <!-- NAV -->
 <div class="nav">
   <a href="index.html">Dashboard</a>
@@ -60,6 +64,35 @@
 <div class="footer">
   <p>© 2026 Edward Academy | Built for JCE & MSCE Success</p>
 </div>
+<script>
+const data = [
+  {name: "Geography (JCE)", link: "jce/geography.html"},
+  {name: "Geography (MSCE)", link: "msce/geography.html"},
+  {name: "History", link: "msce/history.html"},
+  {name: "English", link: "msce/english.html"},
+  {name: "Biology", link: "msce/biology.html"},
+  {name: "Agriculture", link: "msce/agriculture.html"},
+  {name: "Social Studies", link: "jce/social.html"},
+  {name: "Past Papers", link: "papers.html"},
+  {name: "Lessons", link: "lessons.html"}
+];
 
+function searchSite() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let results = document.getElementById("searchResults");
+
+  results.innerHTML = "";
+
+  data.forEach(item => {
+    if (item.name.toLowerCase().includes(input)) {
+      results.innerHTML += `
+        <div class="card">
+          <a href="${item.link}">${item.name}</a>
+        </div>
+      `;
+    }
+  });
+}
+</script>
 </body>
 </html>
