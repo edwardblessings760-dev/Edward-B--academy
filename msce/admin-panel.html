@@ -1,29 +1,122 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin Panel</title>
+  <title>Admin Dashboard</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #0f172a;
+      color: white;
+    }
+
+    /* TOP BAR (mobile app style) */
+    .topbar {
+      background: #1e293b;
+      padding: 18px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .sub {
+      text-align: center;
+      color: #94a3b8;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+
+    /* GRID MENU */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      padding: 15px;
+    }
+
+    .box {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .box:hover {
+      background: #334155;
+      transform: scale(1.03);
+    }
+
+    .box a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 15px;
+      color: #64748b;
+      margin-top: 20px;
+    }
+
+    /* BUTTON STYLE */
+    .btn {
+      background: #22c55e;
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="header">
-  <h1>Admin Panel</h1>
-  <p>Manage JCE & MSCE Content</p>
+<div class="topbar">📊 Admin Dashboard</div>
+<div class="sub">Manage JCE & MSCE Content</div>
+
+<div class="grid">
+
+  <div class="box">
+    📤 Upload Papers
+    <a href="https://github.com" target="_blank">Open Upload</a>
+  </div>
+
+  <div class="box">
+    📚 Manage Notes
+    <a href="https://github.com" target="_blank">Open Folder</a>
+  </div>
+
+  <div class="box">
+    📝 Subjects
+    <a href="lessons.html">View Subjects</a>
+  </div>
+
+  <div class="box">
+    📊 Past Papers
+    <a href="papers.html">Open Papers</a>
+  </div>
+
+  <div class="box">
+    🔐 Security
+    <a href="admin.html">Login Page</a>
+  </div>
+
+  <div class="box">
+    🌍 Live Site
+    <a href="index.html">Open Dashboard</a>
+  </div>
+
 </div>
 
-<div class="card">
-  <h2>📤 Upload Instructions</h2>
-  <p>Go to GitHub → Upload files into correct folders:</p>
-  <ul>
-    <li>papers/geography/</li>
-    <li>notes/jce/</li>
-    <li>notes/msce/</li>
-  </ul>
-</div>
-
-<div class="card">
-  <h2>🔗 Quick Access</h2>
-  <a href="https://github.com" target="_blank">Open GitHub</a>
+<div class="footer">
+  Edward Academy Admin System
 </div>
 
 </body>
