@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Geography Papers</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h1>Geography Past Papers</h1>
+
+<label>Select Year:</label>
+<select onchange="filterPapers(this.value)">
+  <option value="all">All Years</option>
+  <option value="2024">2024</option>
+  <option value="2023">2023</option>
+  <option value="2022">2022</option>
+  <option value="2021">2021</option>
+</select>
+
+<div id="papers">
+
+  <div class="card" data-year="2024">
+    <h3>2024 Paper</h3>
+    <a href="../papers/2024-geo.pdf" download>Download</a>
+  </div>
+
+  <div class="card" data-year="2023">
+    <h3>2023 Paper</h3>
+    <a href="../papers/2023-geo.pdf" download>Download</a>
+  </div>
+
+</div>
+
+<script>
+function filterPapers(year) {
+  let papers = document.querySelectorAll("#papers .card");
+
+  papers.forEach(p => {
+    if (year === "all" || p.getAttribute("data-year") === year) {
+      p.style.display = "block";
+    } else {
+      p.style.display = "none";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
