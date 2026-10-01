@@ -81,3 +81,6 @@ input {
   border-radius: 8px;
   border: 1px solid #ccc;
 }
+.card h2 {
+  color: #1e3a8a;
+}
