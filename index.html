@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Edward Academy Dashboard</title>
+  <title>Edward Academy</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -9,14 +9,10 @@
 <!-- HEADER -->
 <div class="header">
   <h1>Edward Academy</h1>
-  <p>JCE & MSCE Student Learning Dashboard</p>
+  <p>Welcome to Your Learning Dashboard</p>
 </div>
-<div class="card">
-  <h2>🔍 Search Subjects</h2>
-  <input type="text" id="searchInput" placeholder="Search subject or paper..." onkeyup="searchSite()">
-</div>
-<div id="searchResults"></div>  
-<!-- NAV -->
+
+<!-- NAVIGATION -->
 <div class="nav">
   <a href="index.html">Dashboard</a>
   <a href="lessons.html">Lessons</a>
@@ -25,74 +21,47 @@
   <a href="contact.html">Contact</a>
 </div>
 
-<!-- QUICK STATS -->
+<!-- HERO SECTION -->
 <div class="card">
-  <h2>📊 Learning Overview</h2>
-  <p>Track your preparation across JCE & MSCE</p>
+  <h2>🎓 Learn Smart. Pass Exams.</h2>
+  <p>
+    Edward Academy is designed to help JCE and MSCE students succeed through 
+    structured lessons, past papers, and smart revision strategies.
+  </p>
 </div>
 
-<!-- JCE SECTION -->
+<!-- IMAGE SECTION -->
 <div class="card">
-  <h2>📘 JCE Dashboard</h2>
-  <p>Form 1–2 Core Subjects</p>
-
-  <a href="jce/index.html">Go to JCE Hub</a>
-  <a href="lessons.html">View Lessons</a>
-  <a href="papers.html">Practice Papers</a>
+  <h2>📘 Study Made Simple</h2>
+  <img src="https://via.placeholder.com/300x180" alt="Study Image">
+  <p>Access organized notes and topics designed for exam success.</p>
 </div>
 
-<!-- MSCE SECTION -->
 <div class="card">
-  <h2>📕 MSCE Dashboard</h2>
-  <p>Form 3–4 Advanced Revision</p>
-
-  <a href="msce/index.html">Go to MSCE Hub</a>
-  <a href="lessons.html">View Lessons</a>
-  <a href="papers.html">Practice Papers</a>
+  <h2>📝 Practice & Improve</h2>
+  <img src="https://via.placeholder.com/300x180" alt="Exam Practice">
+  <p>Use past papers to test your understanding and improve performance.</p>
 </div>
 
-<!-- STUDY TOOLS -->
 <div class="card">
-  <h2>🧠 Study Tools</h2>
+  <h2>🚀 Achieve Your Goals</h2>
+  <img src="https://via.placeholder.com/300x180" alt="Success">
+  <p>Build confidence and reach your academic goals step by step.</p>
+</div>
 
-  <a href="lessons.html">Lessons Hub</a>
-  <a href="study-tips.html">Study Tips</a>
-  <a href="practice.html">Exam Practice</a>
+<!-- MESSAGE -->
+<div class="card">
+  <h2>💡 How to Use This Platform</h2>
+  <p>
+    Use the navigation above to access lessons, subjects, and past papers. 
+    Start with lessons, then practice using exam papers for best results.
+  </p>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-  <p>© 2026 Edward Academy | Built for JCE & MSCE Success</p>
+  <p>© 2026 Edward Academy | Built for Student Success</p>
 </div>
-<script>
-const data = [
-  {name: "Geography (JCE)", link: "jce/geography.html"},
-  {name: "Geography (MSCE)", link: "msce/geography.html"},
-  {name: "History", link: "msce/history.html"},
-  {name: "English", link: "msce/english.html"},
-  {name: "Biology", link: "msce/biology.html"},
-  {name: "Agriculture", link: "msce/agriculture.html"},
-  {name: "Social Studies", link: "jce/social.html"},
-  {name: "Past Papers", link: "papers.html"},
-  {name: "Lessons", link: "lessons.html"}
-];
 
-function searchSite() {
-  let input = document.getElementById("searchInput").value.toLowerCase();
-  let results = document.getElementById("searchResults");
-
-  results.innerHTML = "";
-
-  data.forEach(item => {
-    if (item.name.toLowerCase().includes(input)) {
-      results.innerHTML += `
-        <div class="card">
-          <a href="${item.link}">${item.name}</a>
-        </div>
-      `;
-    }
-  });
-}
-</script>
 </body>
 </html>
