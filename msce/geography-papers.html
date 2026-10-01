@@ -8,35 +8,75 @@
 
 <h1>Geography Past Papers</h1>
 
-<label>Select Year:</label>
-<select onchange="filterPapers(this.value)">
-  <option value="all">All Years</option>
-  <option value="2024">2024</option>
-  <option value="2023">2023</option>
-  <option value="2022">2022</option>
-  <option value="2021">2021</option>
-</select>
+<!-- FILTERS -->
+<div class="card">
+  <label><b>Select Year:</b></label>
+  <select onchange="filterPapers()" id="year">
+    <option value="all">All Years</option>
+    <option>2024</option>
+    <option>2023</option>
+    <option>2022</option>
+    <option>2021</option>
+    <option>2020</option>
+    <option>2019</option>
+    <option>2018</option>
+    <option>2017</option>
+    <option>2016</option>
+    <option>2015</option>
+  </select>
 
+  <label><b>Session:</b></label>
+  <select onchange="filterPapers()" id="session">
+    <option value="all">All</option>
+    <option value="april">April</option>
+    <option value="november">November</option>
+  </select>
+</div>
+
+<!-- PAPERS LIST -->
 <div id="papers">
 
-  <div class="card" data-year="2024">
-    <h3>2024 Paper</h3>
-    <a href="../papers/2024-geo.pdf" download>Download</a>
+  <!-- Example entries -->
+  <div class="card" data-year="2024" data-session="april">
+    <h3>2024 April Paper</h3>
+    <a href="../papers/2024-april-geo.pdf" download>Download</a>
   </div>
 
-  <div class="card" data-year="2023">
-    <h3>2023 Paper</h3>
-    <a href="../papers/2023-geo.pdf" download>Download</a>
+  <div class="card" data-year="2024" data-session="november">
+    <h3>2024 November Paper</h3>
+    <a href="../papers/2024-nov-geo.pdf" download>Download</a>
+  </div>
+
+  <div class="card" data-year="2023" data-session="april">
+    <h3>2023 April Paper</h3>
+    <a href="../papers/2023-april-geo.pdf" download>Download</a>
+  </div>
+
+  <div class="card" data-year="2018" data-session="november">
+    <h3>2018 November Paper</h3>
+    <a href="../papers/2018-nov-geo.pdf" download>Download</a>
+  </div>
+
+  <div class="card" data-year="2016" data-session="april">
+    <h3>2016 April Paper</h3>
+    <a href="../papers/2016-april-geo.pdf" download>Download</a>
   </div>
 
 </div>
 
+<!-- FILTER SCRIPT -->
 <script>
-function filterPapers(year) {
+function filterPapers() {
+  let year = document.getElementById("year").value;
+  let session = document.getElementById("session").value;
+
   let papers = document.querySelectorAll("#papers .card");
 
   papers.forEach(p => {
-    if (year === "all" || p.getAttribute("data-year") === year) {
+    let matchYear = (year === "all" || p.dataset.year === year);
+    let matchSession = (session === "all" || p.dataset.session === session);
+
+    if (matchYear && matchSession) {
       p.style.display = "block";
     } else {
       p.style.display = "none";
