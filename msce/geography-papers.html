@@ -8,81 +8,30 @@
 
 <h1>Geography Past Papers</h1>
 
-<!-- FILTERS -->
-<div class="card">
-  <label><b>Select Year:</b></label>
-  <select onchange="filterPapers()" id="year">
-    <option value="all">All Years</option>
-    <option>2024</option>
-    <option>2023</option>
-    <option>2022</option>
-    <option>2021</option>
-    <option>2020</option>
-    <option>2019</option>
-    <option>2018</option>
-    <option>2017</option>
-    <option>2016</option>
-    <option>2015</option>
-  </select>
+<div id="fileList"></div>
 
-  <label><b>Session:</b></label>
-  <select onchange="filterPapers()" id="session">
-    <option value="all">All</option>
-    <option value="april">April</option>
-    <option value="november">November</option>
-  </select>
-</div>
-
-<!-- PAPERS LIST -->
-<div id="papers">
-
-  <!-- Example entries -->
-  <div class="card" data-year="2024" data-session="april">
-    <h3>2024 April Paper</h3>
-    <a href="../papers/2024-april-geo.pdf" download>Download</a>
-  </div>
-
-  <div class="card" data-year="2024" data-session="november">
-    <h3>2024 November Paper</h3>
-    <a href="../papers/2024-nov-geo.pdf" download>Download</a>
-  </div>
-
-  <div class="card" data-year="2023" data-session="april">
-    <h3>2023 April Paper</h3>
-    <a href="../papers/2023-april-geo.pdf" download>Download</a>
-  </div>
-
-  <div class="card" data-year="2018" data-session="november">
-    <h3>2018 November Paper</h3>
-    <a href="../papers/2018-nov-geo.pdf" download>Download</a>
-  </div>
-
-  <div class="card" data-year="2016" data-session="april">
-    <h3>2016 April Paper</h3>
-    <a href="../papers/2016-april-geo.pdf" download>Download</a>
-  </div>
-
-</div>
-
-<!-- FILTER SCRIPT -->
 <script>
-function filterPapers() {
-  let year = document.getElementById("year").value;
-  let session = document.getElementById("session").value;
+const files = [
+  {name: "2024 April Paper", file: "papers/geography/2024-april.pdf", year: 2024},
+  {name: "2023 November Paper", file: "papers/geography/2023-nov.pdf", year: 2023},
+  {name: "2022 April Paper", file: "papers/geography/2022-april.pdf", year: 2022},
+  {name: "2018 November Paper", file: "papers/geography/2018-nov.pdf", year: 2018}
+];
 
-  let papers = document.querySelectorAll("#papers .card");
+function loadFiles() {
+  let container = document.getElementById("fileList");
 
-  papers.forEach(p => {
-    let matchYear = (year === "all" || p.dataset.year === year);
-    let matchSession = (session === "all" || p.dataset.session === session);
-
-    if (matchYear && matchSession) {
-      p.style.display = "block";
-    } else {
-      p.style.display = "none";
-    }
+  files.forEach(f => {
+    container.innerHTML += `
+      <div class="card">
+        <h3>${f.name}</h3>
+        <a href="${f.file}" target="_blank">Open / Download</a>
+      </div>
+    `;
   });
 }
+
+loadFiles();
 </script>
 
 </body>
